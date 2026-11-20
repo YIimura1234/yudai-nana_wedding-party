@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Yudai ＆ Nana's Wedding party</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #14171C;
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="gas-frame" allow="fullscreen" allowfullscreen></iframe>
+
+  <script>
+    // ▼ ここにあなたのGASデプロイURL（末尾が /exec のもの）を貼り付けてください
+    const GAS_EXEC_URL = "https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbw0OAJFfMFeG5xn1b29cRUfOvZEvbZJUacCL5OpPppd0UX6sz6Ndj-Ikv-ycOZf-Ub7/exec";
+
+    // GitHub Pages側のURLパラメータ（?view=projector や ?view=admin&key=...）をそのままGASへ引き継ぐ
+    const currentParams = window.location.search || "";
+    document.getElementById("gas-frame").src = GAS_EXEC_URL + currentParams;
+  </script>
+</body>
+</html>
